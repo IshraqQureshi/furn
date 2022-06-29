@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form method="post" action="{% url 'submit' %}" novalidate>
+    {% csrf_token %}
+    <p>
+        <label>First Name</label>
+        {{ contactForm.first_name }}
+        {{ contactForm.first_name.errors }}
+    </p>
+    <p>
+        <label>{{ contactForm.last_name.label }}</label>
+        {{ contactForm.last_name }}
+        {{ contactForm.last_name.errors }}
+    </p>
+    <p>
+        <label>Email</label>
+        {{ contactForm.email }}
+        {{ contactForm.email.errors }}
+    </p>
+    <input type="submit">
+</form>
+
+{% endblock %}

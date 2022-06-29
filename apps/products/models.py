@@ -9,3 +9,6 @@ class Product(models.Model):
     price = models.FloatField()
     isFeatured = models.BooleanField()
     tag = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.name
