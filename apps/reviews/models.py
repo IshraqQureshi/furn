@@ -5,7 +5,6 @@ from apps.products.models import Product
 class Review(models.Model):
     author = models.CharField(max_length=256)
     review = models.TextField()
-    product_id = models.ForeignKey(Product)
 
     def __str__(self):
         return self.author
